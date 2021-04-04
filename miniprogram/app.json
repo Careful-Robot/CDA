@@ -1,13 +1,39 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/Account/Account",
+    "pages/Hospital_Choose/Hospital_Choose",
+    "pages/Hospital/Hospital",
+    "pages/Reservation/Reservation",
+    "pages/Online_Consult/Online_Consult",
+    "pages/QR_Code/QR_Code",
+    "pages/Diagnosis_Record/Diagnosis_Record"
   ],
   "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#02B04F",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "便诊通",
-    "navigationBarTextStyle": "black"
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#39AE7A",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "服务",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_select.png"
+      },
+      {
+        "pagePath": "pages/Account/Account",
+        "text": "个人中心",
+        "iconPath": "images/account.png",
+        "selectedIconPath": "images/account_select.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
