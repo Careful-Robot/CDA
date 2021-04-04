@@ -1,1 +1,15 @@
-<text>miniprogram/pages/index/index.wxml</text>
+<view class="container">
+  <navigator url="/pages/Hospital_Choose/Hospital_Choose">
+    <button type="primary">就诊</button>
+  </navigator>
+</view>
+<view class="container">
+  <navigator url="/pages/QR_Code/QR_Code">
+    <button type="primary">健康码</button>
+  </navigator>
+</view>
+<view class="container">
+  <navigator url="/pages/Diagnosis_Record/Diagnosis_Record">
+    <button type="primary">个人就诊记录</button>
+  </navigator>
+</view>
