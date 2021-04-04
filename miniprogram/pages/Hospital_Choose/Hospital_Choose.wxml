@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="nav_left">
+    <view wx:for="{{type}}" wx:key="index">
+      <view class="nav_left_items {{type_id == index ? 'active' : ''}}" bindtap="switchRightTab"
+        data-id="{{index}}">{{item.name}}</view>
+    </view>
+  </view>
+  <view class="nav_right">
+    <view class="nav_right_items">
+      <view wx:for="{{type[type_id].contain}}" wx:key="index">
+        <navigator url="/pages/Hospital/Hospital?id={{item.id}}">{{item.name}}</navigator>
+      </view>
+    </view>
+  </view>
+</view>

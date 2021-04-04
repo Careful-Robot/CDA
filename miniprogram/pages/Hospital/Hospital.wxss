@@ -1,0 +1,112 @@
+page {
+  background-color: #F2F2F2;
+}
+
+.hospital_name {
+  height: 270rpx;
+  padding: 30rpx 30rpx 0 30rpx;
+  background-color: white;
+}
+
+.name_top {
+  height: 170rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #F5F5F5;
+}
+
+.name_top_left {
+  width: 460rpx;
+}
+
+.name_top_left .name {
+  width: 100%;
+  font-size: 30rpx;
+  font-weight: bold;
+  margin: 15rpx 0 30rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.name_top_left .level,
+.type {
+  font-size: 27rpx;
+}
+
+.name_top_left .level {
+  color: #f8d38a;
+  margin-right: 37rpx;
+}
+
+.name_top_right .image {
+  width: 200rpx;
+  border-radius: 10rpx;
+}
+
+.name_bottom {
+  height: 100rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.name_bottom .image {
+  width: 22rpx;
+  margin-right: 10rpx;
+}
+
+.name_bottom .address {
+  width: 100%;
+  font-size: 28rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.service {
+  height: 266rpx;
+  margin-top: 30rpx;
+  background-color: white;
+}
+
+.service_top {
+  height: 40rpx;
+  padding: 10rpx 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.service_top .greenBar {
+  height: 40rpx;
+  width: 10rpx;
+  margin-right: 30rpx;
+  background-color: #39AE7A;
+}
+
+.service_top .name {
+  font-size: 30rpx;
+}
+
+.service_bottom {
+  height: 206rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service_bottom .navigator {
+  width: 100rpx;
+  height: 130rpx;
+  margin: 0 80rpx;
+}
+
+.service_bottom .image {
+  width: 70rpx;
+  margin: 15rpx;
+  display: block;
+}
+
+.service_bottom .title {
+  font-size: 25rpx;
+}
