@@ -16,7 +16,7 @@
     "scopeDataCheck": false,
     "uglifyFileName": false,
     "checkInvalidKey": true,
-    "checkSiteMap": false,
+    "checkSiteMap": true,
     "uploadWithSourceMap": true,
     "compileHotReLoad": false,
     "useMultiFrameRuntime": true,
@@ -40,6 +40,9 @@
   "appid": "wx12b621342843e04e",
   "projectname": "%E4%BE%BF%E8%AF%8A%E9%80%9A",
   "libVersion": "2.16.0",
+  "compileType": "miniprogram",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
     "search": {
       "list": []

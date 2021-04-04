@@ -1,0 +1,30 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "Hospital_Choose",
+          "pathName": "pages/Hospital_Choose/Hospital_Choose",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "Hospital",
+          "pathName": "pages/Hospital/Hospital",
+          "query": "id=1",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
