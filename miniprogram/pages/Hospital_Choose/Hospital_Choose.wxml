@@ -1,15 +1,22 @@
 <view class="container">
   <view class="nav_left">
     <view wx:for="{{type}}" wx:key="index">
-      <view class="nav_left_items {{type_id == index ? 'active' : ''}}" bindtap="switchRightTab"
-        data-id="{{index}}">{{item.name}}</view>
+      <view class="nav_left_items {{type_id == index ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{index}}"
+        data-level="{{item}}">{{item}}</view>
     </view>
   </view>
   <view class="nav_right">
-    <view class="nav_right_items">
-      <view wx:for="{{type[type_id].contain}}" wx:key="index">
-        <navigator url="/pages/Hospital/Hospital?id={{item.id}}">{{item.name}}</navigator>
-      </view>
+    <view class="hospital" wx:for="{{hospital}}" wx:key="index">
+      <navigator url="/pages/Hospital/Hospital?id={{item._id}}">
+        <view class="hospital_left">
+
+        </view>
+        <view class="hospital_right">
+          <view class="hospital_name">{{item.name}}</view>
+          <view class="address"></view>
+          <view class="type"></view>
+        </view>
+      </navigator>
     </view>
   </view>
 </view>
