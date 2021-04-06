@@ -5,17 +5,17 @@ Page({
    * 页面的初始数据
    */
   data: {
-    type_id: 0,
-    type: ["三甲", "三乙", "三级", "二甲", "二乙", "其他"]
+    level_id: 0,
+    level: ["三甲", "三乙", "三级", "二甲", "二乙", "其他"]
   },
 
-  getHospitalData(level = '三甲') {
+  getHospitalDataByLevel(level = '三甲') {
     wx.showLoading({
       title: '正在加载中...',
       mask: true
     })
     wx.cloud.callFunction({
-      name: 'getHospitalData',
+      name: 'getHospitalDataByLevel',
       data: {
         level
       }
@@ -28,17 +28,20 @@ Page({
   },
 
   switchRightTab(data) {
-    this.getHospitalData(data.currentTarget.dataset.level)
-    this.setData({
-      type_id: data.currentTarget.dataset.id
-    })
+    var level_id = data.currentTarget.dataset.id
+    if (this.data.level_id !== level_id) {
+      this.getHospitalDataByLevel(data.currentTarget.dataset.level)
+      this.setData({
+        level_id
+      })
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getHospitalData()
+    this.getHospitalDataByLevel()
   },
 
   /**
