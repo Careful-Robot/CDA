@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "医院主页",
-  "usingComponents": {}
+  "usingComponents": {
+    "Top_Title": "/components/Top_Title/Top_Title"
+  }
 }
