@@ -1,36 +1,32 @@
-<view wx:for="{{hospital}}" wx:key="index">
-  <view wx:if="{{item.id == hospital_id}}">
-    <view class="hospital_name">
-      <view class="name_top">
-        <view class="name_top_left">
-          <view class="name">{{item.name}}</view>
-          <text class="level">{{item.level}}</text>
-          <text class="type">{{item.type}}</text>
-        </view>
-        <view class="name_top_right">
-          <image class="image" src="{{item.image}}" mode="widthFix"></image>
-        </view>
-      </view>
-      <view class="name_bottom">
-        <image class="image" src="/images/address.png" mode="widthFix"></image>
-        <view class="address">{{item.address}}</view>
-      </view>
+<view class="hospital_name">
+  <view class="name_top">
+    <view class="name_top_left">
+      <view class="name">{{hospital.name}}</view>
+      <text class="level">{{hospital.level}}</text>
+      <text class="type">{{hospital.type}}</text>
     </view>
-    <view class="service">
-      <view class="service_top">
-        <view class="greenBar"></view>
-        <view class="name">医院服务</view>
-      </view>
-      <view class="service_bottom">
-        <navigator class="navigator" url="/pages/Reservation/Reservation">
-          <image class="image" src="/images/reservation.png" mode="widthFix"></image>
-          <view class="title">预约挂号</view>
-        </navigator>
-        <navigator class="navigator" url="/pages/Online_Consult/Online_Consult">
-          <image class="image" src="/images/online_consult.png" mode="widthFix"></image>
-          <view class="title">线上咨询</view>
-        </navigator>
-      </view>
+    <view class="name_top_right">
+      <image class="image" src="{{hospital.image}}" mode="widthFix"></image>
     </view>
+  </view>
+  <view class="name_bottom">
+    <image class="image" src="/images/address.png" mode="widthFix"></image>
+    <view class="address">{{hospital.address}}</view>
+  </view>
+</view>
+<view class="service">
+  <view class="service_top">
+    <view class="greenBar"></view>
+    <view class="name">医院服务</view>
+  </view>
+  <view class="service_bottom">
+    <navigator class="navigator" url="/pages/Reservation/Reservation">
+      <image class="image" src="/images/reservation.png" mode="widthFix"></image>
+      <view class="title">预约挂号</view>
+    </navigator>
+    <navigator class="navigator" url="/pages/Online_Consult/Online_Consult">
+      <image class="image" src="/images/online_consult.png" mode="widthFix"></image>
+      <view class="title">线上咨询</view>
+    </navigator>
   </view>
 </view>
