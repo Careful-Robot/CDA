@@ -14,19 +14,43 @@
     <view class="address">{{hospital.address}}</view>
   </view>
 </view>
-<view class="service">
-  <view class="service_top">
-    <view class="greenBar"></view>
-    <view class="name">医院服务</view>
-  </view>
+<view class="hospital_service">
+  <Top_Title name="医院服务"></Top_Title>
   <view class="service_bottom">
-    <navigator class="navigator" url="/pages/Reservation/Reservation">
+    <navigator class="navigator" url="/pages/Reservation/Reservation?id={{hospital._id}}">
       <image class="image" src="/images/reservation.png" mode="widthFix"></image>
       <view class="title">预约挂号</view>
     </navigator>
-    <navigator class="navigator" url="/pages/Online_Consult/Online_Consult">
+    <navigator class="navigator" url="/pages/Online_Consult/Online_Consult?id={{hospital._id}}">
       <image class="image" src="/images/online_consult.png" mode="widthFix"></image>
-      <view class="title">线上咨询</view>
+      <view class="title">在线咨询</view>
     </navigator>
+  </view>
+  <view class="hospital_information">
+    <view class="hospital_information_block">
+      <Top_Title name="联系方式"></Top_Title>
+      <view class="contact_bottom">
+        <view class="contact_bottom_left">
+          <view class="view">急诊电话</view>
+          <view class="view">咨询台电话</view>
+          <view class="view">医院传真</view>
+          <view>医院网址</view>
+        </view>
+        <view class="contact_bottom_right">
+          <view class="view">{{hospital.emergencyRoom_phone}}</view>
+          <view class="view">{{hospital.informationDesk_phone}}</view>
+          <view class="view">{{hospital.fax}}</view>
+          <view>{{hospital.website}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="hospital_information_block">
+      <Top_Title name="交通路线"></Top_Title>
+      <view class="bottom">{{hospital.trafficRoutes}}</view>
+    </view>
+    <view class="hospital_information_block" style="margin-bottom: 0">
+      <Top_Title name="医院信息"></Top_Title>
+      <view class="bottom">{{hospital.information}}</view>
+    </view>
   </view>
 </view>
