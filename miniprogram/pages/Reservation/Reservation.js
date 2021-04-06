@@ -8,11 +8,29 @@ Page({
 
   },
 
+  getHospitalDataById(id) {
+    wx.showLoading({
+      title: '正在加载中...',
+      mask: true
+    })
+    wx.cloud.callFunction({
+      name: 'getHospitalDataById',
+      data: {
+        id
+      }
+    }).then(res => {
+      this.setData({
+        hospital: res.result.data
+      })
+      wx.hideLoading()
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getHospitalDataById(options.id)
   },
 
   /**
