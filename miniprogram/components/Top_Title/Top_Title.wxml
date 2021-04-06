@@ -1,0 +1,4 @@
+<view class="top">
+  <view class="greenBar"></view>
+  <view class="name">{{name}}</view>
+</view>

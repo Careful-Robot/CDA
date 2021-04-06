@@ -1,0 +1,17 @@
+.top {
+  height: 40rpx;
+  padding: 10rpx 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.top .greenBar {
+  height: 40rpx;
+  width: 10rpx;
+  margin-right: 30rpx;
+  background-color: #39AE7A;
+}
+
+.top .name {
+  font-size: 30rpx;
+}
