@@ -7,7 +7,7 @@
 .nav_left {
   position: absolute;
   display: inline-block;
-  width: 35%;
+  width: 25%;
   height: 100%;
   background: #F2F2F2;
   text-align: center;
@@ -35,20 +35,56 @@
   top: 0;
   right: 0;
   flex: 1;
-  width: 65%;
+  width: 75%;
   height: 100%;
-  padding: 20rpx;
+  padding: 20rpx 10rpx;
   box-sizing: border-box;
   background: #fff;
   overflow: scroll;
 }
 
-.nav_right .nav_right_items view {
-  display: block;
-  margin-bottom: 50rpx;
+.hospital {
+  height: 150rpx;
+  padding: 10rpx 10rpx 10rpx 20rpx;
+  margin-bottom: 10rpx;
+}
+
+.hospital .navigator {
+  display: flex;
+}
+
+.hospital_left {
+  width: 60rpx;
+  margin-right: 20rpx;
+}
+
+.hospital_right {
+  width: 430rpx;
+}
+
+.hospital_right .hospital_name {
+  width: 100%;
+  padding: 10rpx 0;
   font-size: 30rpx;
-  text-align: left;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+
+.hospital_right .address {
+  height: 65rpx;
+  font-size: 20rpx;
+  color: #ccc;
+}
+
+.hospital_right .level {
+  width: 50rpx;
+  height: 30rpx;
+  font-size: 18rpx;
+  color: white;
+  background-color: #39AE7A;
+  border-radius: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
