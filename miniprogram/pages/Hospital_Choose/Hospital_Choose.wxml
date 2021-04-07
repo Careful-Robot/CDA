@@ -7,7 +7,7 @@
   </view>
   <view class="nav_right">
     <view class="hospital" wx:for="{{hospital}}" wx:key="index">
-      <navigator class="navigator" url="/pages/Hospital/Hospital?id={{item._id}}">
+      <navigator class="navigator" url="/pages/Hospital/Hospital?id={{item._id}}" hover-class="none">
         <image class="hospital_left" src="/images/hospital.png" mode="widthFix"></image>
         <view class="hospital_right">
           <view class="hospital_name">{{item.name}}</view>
