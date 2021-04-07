@@ -1,0 +1,91 @@
+page {
+  background-color: #F2F2F2;
+}
+
+.hospital {
+  height: 142rpx;
+  padding: 18rpx 26rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.hospital .hospital_left {
+  width: 139rpx;
+}
+
+.hospital .hospital_information {
+  width: 440rpx;
+  height: 100%;
+  padding: 10rpx 0 10rpx 40rpx;
+}
+
+.hospital .hospital_information .name {
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.hospital .hospital_information .address {
+  font-size: 26rpx;
+  font-weight: lighter;
+}
+
+.hospital .hospital_information .name,
+.hospital .hospital_information .address {
+  width: 100%;
+  padding: 10rpx 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.hospital .hospital_more {
+  font-size: 26rpx;
+  color: #ccc;
+  margin-bottom: 40rpx;
+}
+
+.department {
+  margin-top: 10rpx;
+  background-color: white;
+  display: flex;
+}
+
+.department .department_left {
+  width: 260rpx;
+  background-color: #F2F2F2;
+}
+
+.department .department_left .box {
+  height: 120rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+.department .department_left .box .greenBar {
+  height: 100%;
+  width: 10rpx;
+  background-color: #39AE7A;
+}
+
+.department .department_left .box .name {
+  height: 100%;
+  width: 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.department .department_right {
+  width: 490rpx;
+  padding-left: 30rpx;
+}
+
+.department .department_right .department_name {
+  height: 88rpx;
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #F5F5F5;
+}

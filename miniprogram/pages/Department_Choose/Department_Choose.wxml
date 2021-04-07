@@ -1,0 +1,21 @@
+<view class="hospital">
+  <image class="hospital_left" src="{{hospital.image}}" mode="widthFix"></image>
+  <view class="hospital_information">
+    <view class="name">{{hospital.name}}</view>
+    <view class="address">{{hospital.address}}</view>
+  </view>
+  <navigator class="hospital_more" url="/pages/Hospital/Hospital?id={{hospital._id}}" hover-class="none">详情 >
+  </navigator>
+</view>
+<view class="department">
+  <view class="department_left">
+    <view class="box">
+      <view class="greenBar"></view>
+      <view class="name">科室</view>
+    </view>
+  </view>
+  <view class="department_right">
+    <navigator class="department_name" url="/pages/Doctor_Choose/Doctor_Choose?id={{hospital._id}}&department={{item}}"
+      hover-class="none" wx:for="{{hospital.department}}" wx:key="index">{{item}}</navigator>
+  </view>
+</view>
