@@ -17,7 +17,7 @@
 <view class="hospital_service">
   <Top_Title name="医院服务"></Top_Title>
   <view class="service_bottom">
-    <navigator class="navigator" url="/pages/Reservation/Reservation?id={{hospital._id}}">
+    <navigator class="navigator" url="/pages/Department_Choose/Department_Choose?id={{hospital._id}}">
       <image class="image" src="/images/reservation.png" mode="widthFix"></image>
       <view class="title">预约挂号</view>
     </navigator>
