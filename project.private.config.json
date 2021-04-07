@@ -25,8 +25,8 @@
           "scene": null
         },
         {
-          "name": "Reservation",
-          "pathName": "pages/Reservation/Reservation",
+          "name": "Department_Choose",
+          "pathName": "pages/Department_Choose/Department_Choose",
           "query": "id=79550af2606a86730d65d0b30e9d8575",
           "scene": null
         }
