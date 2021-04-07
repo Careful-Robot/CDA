@@ -4,7 +4,8 @@
     "pages/Account/Account",
     "pages/Hospital_Choose/Hospital_Choose",
     "pages/Hospital/Hospital",
-    "pages/Reservation/Reservation",
+    "pages/Department_Choose/Department_Choose",
+    "pages/Doctor_Choose/Doctor_Choose",
     "pages/Online_Consult/Online_Consult",
     "pages/QR_Code/QR_Code",
     "pages/Diagnosis_Record/Diagnosis_Record"
