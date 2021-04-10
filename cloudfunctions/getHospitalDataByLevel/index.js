@@ -8,7 +8,8 @@ const db = cloud.database()
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return await db.collection('Hospital').where({
-    level: event.level
-  }).get()
+  return await db.collection('Hospital')
+    .where({
+      level: event.level
+    }).get()
 }
