@@ -29,6 +29,17 @@
           "pathName": "pages/Department_Choose/Department_Choose",
           "query": "id=79550af2606a86730d65d0b30e9d8575",
           "scene": null
+        },
+        {
+          "name": "Doctor_Choose",
+          "pathName": "pages/Doctor_Choose/Doctor_Choose",
+          "query": "id=79550af2606a86730d65d0b30e9d8575&department=内科",
+          "scene": null
+        },
+        {
+          "name": "test",
+          "pathName": "pages/test/test",
+          "scene": null
         }
       ]
     }
