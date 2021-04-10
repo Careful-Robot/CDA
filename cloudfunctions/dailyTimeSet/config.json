@@ -1,0 +1,12 @@
+{
+  "triggers": [
+    {
+      "name": "Trigger",
+      "type": "timer",
+      "config": "5 0 0 * * * *"
+    }
+  ],
+  "permissions": {
+    "openapi": []
+  }
+}
