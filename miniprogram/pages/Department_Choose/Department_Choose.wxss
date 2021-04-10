@@ -46,6 +46,7 @@ page {
 }
 
 .department {
+  height: 100%;
   margin-top: 10rpx;
   background-color: white;
   display: flex;
@@ -72,6 +73,7 @@ page {
 .department .department_left .box .name {
   height: 100%;
   width: 250rpx;
+  color: #39AE7A;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,6 +81,7 @@ page {
 
 .department .department_right {
   width: 490rpx;
+  height: 100%;
   padding-left: 30rpx;
 }
 
