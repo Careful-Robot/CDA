@@ -1,2 +1,24 @@
-<!--pages/Doctor_Choose/Doctor_Choose.wxml-->
-<text>pages/Doctor_Choose/Doctor_Choose.wxml</text>
+<view class="doctor_reservations" wx:for="{{doctor}}" wx:key="index">
+  <view class="doctor">
+    <image class="doctor_left" src="{{item.image}}" mode="widthFix"></image>
+    <view class="doctor_right">
+      <view class="doctor_name">
+        <view class="name">{{item.name}}</view>
+        <view class="level">{{item.level}}</view>
+      </view>
+      <view class="doctor_hospital">
+        <view class="hospital">{{item.hospital[0].name}}</view>
+        <view class="department">{{item.department}}</view>
+      </view>
+      <view class="doctor_description">擅长：{{item.description}}</view>
+    </view>
+  </view>
+  <view class="reservations">
+    <view class="dateBar">
+      <view class="date" wx:for="{{date}}" wx:key="index">
+        <view>{{item[0]}}</view>
+        <view>{{item[1]}}</view>
+      </view>
+    </view>
+  </view>
+</view>
