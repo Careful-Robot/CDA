@@ -1,23 +1,63 @@
-<view class="doctor_reservations" wx:for="{{doctor}}" wx:key="index">
+<view class="doctor_reservations" wx:for="{{doctor}}" wx:for-item="doctor" wx:key="index">
   <view class="doctor">
-    <image class="doctor_left" src="{{item.image}}" mode="widthFix"></image>
+    <image class="doctor_left" src="{{doctor.image}}" mode="widthFix"></image>
     <view class="doctor_right">
       <view class="doctor_name">
-        <view class="name">{{item.name}}</view>
-        <view class="level">{{item.level}}</view>
+        <view class="name">{{doctor.name}}</view>
+        <view class="level">{{doctor.level}}</view>
       </view>
       <view class="doctor_hospital">
-        <view class="hospital">{{item.hospital[0].name}}</view>
-        <view class="department">{{item.department}}</view>
+        <view class="hospital">{{doctor.hospital[0].name}}</view>
+        <view class="department">{{doctor.department}}</view>
       </view>
-      <view class="doctor_description">擅长：{{item.description}}</view>
+      <view class="doctor_description">擅长：{{doctor.description}}</view>
     </view>
   </view>
   <view class="reservations">
     <view class="dateBar">
-      <view class="date" wx:for="{{date}}" wx:key="index">
-        <view>{{item[0]}}</view>
-        <view>{{item[1]}}</view>
+      <view class="date" wx:for="{{date}}" wx:for-item="date" wx:key="index">
+        <view>{{date[0]}}</view>
+        <view>{{date[1]}}</view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="text">上午</view>
+      <view wx:for="{{7}}" wx:for-index="idx" wx:key="idx">
+        <view wx:if="{{doctor.work_time[date[idx][2]] == true}}">
+          <view wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
+            <view wx:if="{{doctor_reservations.time == date[idx][3]}}">
+              <view wx:if="{{doctor_reservations.morning_reservations < doctor.reservations_max}}">
+                <view class="time_reservations">预约</view>
+              </view>
+              <view wx:else>
+                <view class="time_full">已满</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:else>
+          <view class="time_reservations"></view>
+        </view>
+      </view>
+    </view>
+    <view class="content">
+      <view class="text">下午</view>
+      <view wx:for="{{7}}" wx:for-index="idx" wx:key="idx">
+        <view wx:if="{{doctor.work_time[date[idx][2]] == true}}">
+          <view wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
+            <view wx:if="{{doctor_reservations.time == date[idx][3]}}">
+              <view wx:if="{{doctor_reservations.afternoon_reservations < doctor.reservations_max}}">
+                <view class="time_reservations">预约</view>
+              </view>
+              <view wx:else>
+                <view class="time_full">已满</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view wx:else>
+          <view class="time_reservations"></view>
+        </view>
       </view>
     </view>
   </view>
