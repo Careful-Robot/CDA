@@ -122,3 +122,12 @@ page {
   border-style: solid;
   border-color: #e2e2e2;
 }
+
+.reservations .content .time_reservations {
+  background-color: #ebf6f0;
+  color: #39AE7A;
+}
+
+.reservations .content .time_full {
+  color: #919191;
+}
