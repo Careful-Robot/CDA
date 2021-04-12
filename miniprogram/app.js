@@ -1,17 +1,30 @@
 App({
-  onLaunch: function () {
-    if (!wx.cloud) {
-      console.error('请使用 2.2.3 或以上的基础库以使用云能力')
-    } else {
-      wx.cloud.init({
-        // env 参数说明：
-        //   env 参数决定接下来小程序发起的云开发调用（wx.cloud.xxx）会默认请求到哪个云环境的资源
-        //   此处请填入环境 ID, 环境 ID 可打开云控制台查看
-        //   如不填则使用默认环境（第一个创建的环境）
-        env: 'carefulrobot-9gdwsth4e675d6ac',
-        traceUser: true
+  globalData: {
+    userInfo: {},
+    hasUserInfo: false
+  },
+  onLaunch() {
+    wx.cloud.init({
+      env: 'carefulrobot-9gdwsth4e675d6ac',
+      traceUser: true
+    })
+    wx.cloud.callFunction({
+      name: 'getUserProfile'
+    }).then(res => {
+      wx.cloud.callFunction({
+        name: 'getUserData',
+        data: {
+          openId: res.result.openid
+        }
+      }).then(res => {
+        if (res.result.data.length != 0) {
+          this.globalData.userInfo = res.result.data[0]
+          this.globalData.hasUserInfo = true
+          if (this.checkLoginReadyCallback) {
+            this.checkLoginReadyCallback(res);
+          }
+        }
       })
-    }
-    this.globalData = {}
+    })
   }
 })
