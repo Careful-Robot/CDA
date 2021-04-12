@@ -23,41 +23,41 @@
     <view class="content">
       <view class="text">上午</view>
       <view wx:for="{{7}}" wx:for-index="idx" wx:key="idx">
-        <view wx:if="{{doctor.work_time[date[idx][2]] == true}}">
+        <block wx:if="{{doctor.work_time[date[idx][2]] == true}}">
           <view wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
-            <view wx:if="{{doctor_reservations.time == date[idx][3]}}">
-              <view wx:if="{{doctor_reservations.morning_reservations < doctor.reservations_max}}">
-                <view class="time_reservations">预约</view>
-              </view>
-              <view wx:else>
-                <view class="time_full">已满</view>
-              </view>
-            </view>
+            <block wx:if="{{doctor_reservations.time == date[idx][3]}}">
+              <block wx:if="{{doctor_reservations.morning_reservations < doctor.reservations_max}}">
+                <navigator class="time_reservations">预约</navigator>
+              </block>
+              <block wx:else>
+                <view class="time_full">约满</view>
+              </block>
+            </block>
           </view>
-        </view>
-        <view wx:else>
-          <view class="time_reservations"></view>
-        </view>
+        </block>
+        <block wx:else>
+          <view class="time_full"></view>
+        </block>
       </view>
     </view>
     <view class="content">
       <view class="text">下午</view>
       <view wx:for="{{7}}" wx:for-index="idx" wx:key="idx">
-        <view wx:if="{{doctor.work_time[date[idx][2]] == true}}">
+        <block wx:if="{{doctor.work_time[date[idx][2]] == true}}">
           <view wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
-            <view wx:if="{{doctor_reservations.time == date[idx][3]}}">
-              <view wx:if="{{doctor_reservations.afternoon_reservations < doctor.reservations_max}}">
-                <view class="time_reservations">预约</view>
-              </view>
-              <view wx:else>
-                <view class="time_full">已满</view>
-              </view>
-            </view>
+            <block wx:if="{{doctor_reservations.time == date[idx][3]}}">
+              <block wx:if="{{doctor_reservations.afternoon_reservations < doctor.reservations_max}}">
+                <navigator class="time_reservations">预约</navigator>
+              </block>
+              <block wx:else>
+                <view class="time_full">约满</view>
+              </block>
+            </block>
           </view>
-        </view>
-        <view wx:else>
-          <view class="time_reservations"></view>
-        </view>
+        </block>
+        <block wx:else>
+          <view class="time_full"></view>
+        </block>
       </view>
     </view>
   </view>
