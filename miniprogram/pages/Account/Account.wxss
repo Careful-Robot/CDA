@@ -1,1 +1,35 @@
-/* pages/Account/Account.wxss */
+.top {
+  width: 100%;
+  height: 316rpx;
+  background-color: #04cf76;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top .userinfo-avatar {
+  width: 147rpx;
+  margin: 0 24rpx 10rpx 24rpx;
+  border: 10rpx solid white;
+  border-radius: 100%;
+  background-color: white;
+}
+
+.top .userinfo-nickname {
+  width: 195rpx;
+  height: 33rpx;
+  font-size: 23rpx;
+  border-radius: 25rpx;
+  padding: 10rpx;
+  color: white;
+  background-color: #039542;
+  text-align: center;
+}
+
+.bottom{
+  width: 100%;
+  height: 750rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,66 +1,53 @@
-// pages/Account/Account.js
+const app = getApp()
 Page({
-
-  /**
-   * 页面的初始数据
-   */
-  data: {
-
+  data: {},
+  onLoad() {
+    if (app.globalData.hasUserInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo,
+        hasUserInfo: app.globalData.hasUserInfo
+      })
+    } else {
+      app.checkLoginReadyCallback = res => {
+        console.log(res)
+        this.setData({
+          userInfo: app.globalData.userInfo,
+          hasUserInfo: app.globalData.hasUserInfo
+        })
+      }
+    }
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  getUserProfile() {
+    wx.getUserProfile({
+      desc: '用于完善个人资料',
+      success: (res) => {
+        wx.cloud.callFunction({
+          name: 'getUserProfile',
+          data: {
+            weRunData: wx.cloud.CloudID(res.cloudID),
+            obj: {
+              shareInfo: wx.cloud.CloudID(res.cloudID),
+            }
+          }
+        }).then(res1 => {
+          this.setData({
+            userInfo: res.userInfo,
+            'userInfo.openId': res1.result.event.userInfo.openId,
+            hasUserInfo: true
+          })
+          getApp().globalData.userInfo = this.data.userInfo
+          getApp().globalData.hasUserInfo = true
+          this.setUserData(this.data.userInfo)
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  setUserData(userInfo) {
+    wx.cloud.callFunction({
+      name: 'setUserData',
+      data: {
+        userInfo
+      }
+    })
   }
 })

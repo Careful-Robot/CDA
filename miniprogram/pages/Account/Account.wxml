@@ -1,2 +1,19 @@
-<!--pages/Account/Account.wxml-->
-<text>pages/Account/Account.wxml</text>
+<block wx:if="{{!hasUserInfo}}">
+  <view class="top">
+    <view>
+      <image class="userinfo-avatar" src="/images/account.png" mode="widthFix"></image>
+      <view class="userinfo-nickname">未登录</view>
+    </view>
+  </view>
+  <view class="bottom">
+    <button type="primary" bindtap="getUserProfile">登陆</button>
+  </view> 
+</block>
+<block wx:else>
+  <view class="top">
+    <view>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+</block>
