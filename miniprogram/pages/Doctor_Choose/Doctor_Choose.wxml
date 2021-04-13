@@ -22,9 +22,9 @@
     </view>
     <view class="content">
       <view class="text">上午</view>
-      <view wx:for="{{7}}" wx:for-index="idx" wx:key="idx">
+      <block wx:for="{{7}}" wx:for-index="idx" wx:key="idx">
         <block wx:if="{{doctor.work_time[date[idx][2]] == true}}">
-          <view wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
+          <block wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
             <block wx:if="{{doctor_reservations.time == date[idx][3]}}">
               <block wx:if="{{doctor_reservations.morning_reservations < doctor.reservations_max}}">
                 <navigator class="time_reservations">预约</navigator>
@@ -33,18 +33,18 @@
                 <view class="time_full">约满</view>
               </block>
             </block>
-          </view>
+          </block>
         </block>
         <block wx:else>
           <view class="time_full"></view>
         </block>
-      </view>
+      </block>
     </view>
     <view class="content">
       <view class="text">下午</view>
-      <view wx:for="{{7}}" wx:for-index="idx" wx:key="idx">
+      <block wx:for="{{7}}" wx:for-index="idx" wx:key="idx">
         <block wx:if="{{doctor.work_time[date[idx][2]] == true}}">
-          <view wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
+          <block wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
             <block wx:if="{{doctor_reservations.time == date[idx][3]}}">
               <block wx:if="{{doctor_reservations.afternoon_reservations < doctor.reservations_max}}">
                 <navigator class="time_reservations">预约</navigator>
@@ -53,12 +53,12 @@
                 <view class="time_full">约满</view>
               </block>
             </block>
-          </view>
+          </block>
         </block>
         <block wx:else>
           <view class="time_full"></view>
         </block>
-      </view>
+      </block>
     </view>
   </view>
 </view>

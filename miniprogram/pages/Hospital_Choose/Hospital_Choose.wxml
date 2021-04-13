@@ -1,9 +1,9 @@
 <view class="container">
   <view class="nav_left">
-    <view wx:for="{{level}}" wx:key="index">
+    <block wx:for="{{level}}" wx:key="index">
       <view class="nav_left_items {{level_id == index ? 'active' : ''}}" bindtap="switchRightTab" data-id="{{index}}"
         data-level="{{item}}">{{item}}</view>
-    </view>
+    </block>
   </view>
   <view class="nav_right">
     <view class="hospital" wx:for="{{hospital}}" wx:key="index">
