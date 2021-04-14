@@ -44,7 +44,9 @@ exports.main = async (event, context) => {
                       reservations: _.addToSet({
                         time,
                         morning_reservations: 0,
-                        afternoon_reservations: 0
+                        afternoon_reservations: 0,
+                        morning: [],
+                        afternoon: []
                       })
                     }
                   })
@@ -76,7 +78,9 @@ exports.main = async (event, context) => {
                           reservations: _.addToSet({
                             time,
                             morning_reservations: 0,
-                            afternoon_reservations: 0
+                            afternoon_reservations: 0,
+                            morning: [],
+                            afternoon: []
                           })
                         }
                       })
