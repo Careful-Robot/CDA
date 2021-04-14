@@ -1,6 +1,9 @@
 const app = getApp()
 Page({
-  data: {},
+  data: {
+    userInfo: {},
+    hasUserInfo: false
+  },
   onLoad() {
     if (app.globalData.hasUserInfo) {
       this.setData({
@@ -9,7 +12,6 @@ Page({
       })
     } else {
       app.checkLoginReadyCallback = res => {
-        console.log(res)
         this.setData({
           userInfo: app.globalData.userInfo,
           hasUserInfo: app.globalData.hasUserInfo
@@ -51,6 +53,15 @@ Page({
     }
   },
   setUserData(userInfo) {
+    Object.assign(userInfo, {
+      isReservations: false,
+      reservations: {
+        hospital_id: '',
+        doctor_id: '',
+        timestamp: '',
+        time: ''
+      }
+    })
     wx.cloud.callFunction({
       name: 'setUserData',
       data: {
