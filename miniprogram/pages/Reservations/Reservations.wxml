@@ -1,0 +1,1 @@
+<view hidden="{{!reservationsResult}}">预约成功！</view>
