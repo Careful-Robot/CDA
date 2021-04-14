@@ -27,7 +27,8 @@
           <block wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
             <block wx:if="{{doctor_reservations.time == date[idx][3]}}">
               <block wx:if="{{doctor_reservations.morning_reservations < doctor.reservations_max}}">
-                <navigator class="time_reservations">预约</navigator>
+                <view class="time_reservations" bindtap="reservations" data-doctor_id="{{doctor._id}}"
+                  data-timestamp="{{date[idx][3]}}" data-time="morning">预约</view>
               </block>
               <block wx:else>
                 <view class="time_full">约满</view>
@@ -47,7 +48,8 @@
           <block wx:for="{{doctor.reservations}}" wx:for-item="doctor_reservations" wx:key="index">
             <block wx:if="{{doctor_reservations.time == date[idx][3]}}">
               <block wx:if="{{doctor_reservations.afternoon_reservations < doctor.reservations_max}}">
-                <navigator class="time_reservations">预约</navigator>
+                <view class="time_reservations" bindtap="reservations" data-doctor_id="{{doctor._id}}"
+                  data-timestamp="{{date[idx][3]}}" data-time="afternoon">预约</view>
               </block>
               <block wx:else>
                 <view class="time_full">约满</view>
@@ -59,6 +61,36 @@
           <view class="time_full"></view>
         </block>
       </block>
+    </view>
+  </view>
+</view>
+<view class="confirm" hidden="{{hidden}}">
+  <view class="background">
+    <view class="title_background">
+      <text class="title">预约确认</text>
+    </view>
+    <view class="body">
+      <view class="style">
+        <text class="time_date">{{reservations.date.year}}-{{reservations.date.month}}-{{reservations.date.day}}</text>
+        <block wx:if="{{reservations.time == 'morning'}}">
+          <text>上午</text>
+        </block>
+        <block wx:else>
+          <text>下午</text>
+        </block>
+      </view>
+      <view class="hospital style">
+        <text>{{doctor[0].hospital[0].name}}</text>
+      </view>
+      <view class="style">
+        <text>{{reservations.doctor_name}}</text>
+      </view>
+    </view>
+    <view class="bottom">
+      <button class="cacel_button button" bindtap="hide">取消</button>
+      <navigator
+        url="/pages/Reservations/Reservations?hospital_id={{hospital_id}}&doctor_id={{reservations.doctor_id}}&timestamp={{reservations.timestamp}}&time={{reservations.time}}"
+        hover-class="none"><button class="confirm_button button" bindtap="hide">确认</button></navigator>
     </view>
   </view>
 </view>

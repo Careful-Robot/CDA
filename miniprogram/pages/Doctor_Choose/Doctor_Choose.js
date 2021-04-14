@@ -1,8 +1,12 @@
 Page({
   data: {
-    date: []
+    date: [],
+    hidden: true
   },
   onLoad(options) {
+    this.setData({
+      hospital_id: options.id
+    })
     this.getData(options)
     this.getDate()
   },
@@ -12,7 +16,7 @@ Page({
       mask: true
     })
     wx.cloud.callFunction({
-      name: 'getDoctorData',
+      name: 'getDoctorDataByData',
       data: {
         info
       }
@@ -43,5 +47,35 @@ Page({
         ])
       })
     }
+  },
+  reservations(info) {
+    let temp = new Date(parseInt(info.currentTarget.dataset.timestamp) * 1000)
+    let date = {
+      year: temp.getFullYear(),
+      month: temp.getMonth() + 1,
+      day: temp.getDate()
+    }
+    wx.cloud.callFunction({
+      name: 'getDoctorDataById',
+      data: {
+        id: info.currentTarget.dataset.doctor_id
+      }
+    }).then(res => {
+      this.setData({
+        reservations: {
+          doctor_id: info.currentTarget.dataset.doctor_id,
+          doctor_name: res.result.data.name,
+          timestamp: info.currentTarget.dataset.timestamp,
+          date: date,
+          time: info.currentTarget.dataset.time
+        },
+        hidden: false
+      })
+    })
+  },
+  hide() {
+    this.setData({
+      hidden: true
+    })
   }
 })
