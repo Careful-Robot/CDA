@@ -26,7 +26,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "服务",
+        "text": "首页",
         "iconPath": "images/index.png",
         "selectedIconPath": "images/index_select.png"
       },
@@ -39,8 +39,5 @@
     ]
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2",
-  "useExtendedLib": {
-    "weui": true
-  }
+  "style": "v2"
 }
