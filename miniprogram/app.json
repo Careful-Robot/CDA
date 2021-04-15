@@ -9,8 +9,7 @@
     "pages/Reservations/Reservations",
     "pages/Online_Consult/Online_Consult",
     "pages/QR_Code/QR_Code",
-    "pages/Diagnosis_Record/Diagnosis_Record",
-    "pages/test/test"
+    "pages/Diagnosis_Record/Diagnosis_Record"
   ],
   "window": {
     "navigationBarBackgroundColor": "#02B04F",
