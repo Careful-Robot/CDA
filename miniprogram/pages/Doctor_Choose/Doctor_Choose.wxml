@@ -10,7 +10,7 @@
         <view class="hospital">{{doctor.hospital[0].name}}</view>
         <view class="department">{{doctor.department}}</view>
       </view>
-      <view class="doctor_description">擅长：{{doctor.description}}</view>
+      <view class="doctor_description">{{doctor.description}}</view>
     </view>
   </view>
   <view class="reservations">
