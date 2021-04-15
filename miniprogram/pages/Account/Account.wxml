@@ -7,7 +7,7 @@
   </view>
   <view class="bottom">
     <button type="primary" bindtap="getUserProfile">登陆</button>
-  </view> 
+  </view>
 </block>
 <block wx:else>
   <view class="top">
@@ -16,4 +16,25 @@
       <view class="userinfo-nickname">{{userInfo.nickName}}</view>
     </view>
   </view>
+  <block wx:if="{{userInfo.isReservations}}">
+    <view class="reservations">
+      <view class="info">预约信息：</view>
+      <view class="style">
+        <text class="time_date">{{reservations.date.year}}-{{reservations.date.month}}-{{reservations.date.day}}</text>
+        <block wx:if="{{reservations.time == 'morning'}}">
+          <text>上午</text>
+        </block>
+        <block wx:else>
+          <text>下午</text>
+        </block>
+      </view>
+      <view class="hospital style">
+        <text>{{reservations.hospital_name}}</text>
+      </view>
+      <view class="style">
+        <text>{{reservations.doctor_name}}</text>
+      </view>
+      <button type="primary" bindtap="cancel">取消预约</button>
+    </view>
+  </block>
 </block>
