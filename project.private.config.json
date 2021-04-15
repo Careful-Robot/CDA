@@ -37,21 +37,9 @@
           "scene": null
         },
         {
-          "name": "test",
-          "pathName": "pages/test/test",
-          "query": "",
-          "scene": null
-        },
-        {
           "name": "Account",
           "pathName": "pages/Account/Account",
           "query": "",
-          "scene": null
-        },
-        {
-          "name": "Reservations",
-          "pathName": "pages/Reservations/Reservations",
-          "query": "hospital_id=79550af2606a86730d65d0b30e9d8575&doctor_id=cbddf0af606e9c1e00dd674410a5e95c&timestamp=1618243200&time=morning",
           "scene": null
         }
       ]
