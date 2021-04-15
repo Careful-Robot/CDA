@@ -1,1 +1,7 @@
-<view hidden="{{!reservationsResult}}">预约成功！</view>
+<view class="container" hidden="{{!reservationsResult}}">
+  <view class="success">
+    <image class="image" src="/images/success.png" mode="widthFix"></image>
+    <view class="text">恭喜您，预约成功！</view>
+    <button class="button" bindtap="button">好的</button>
+  </view>
+</view>

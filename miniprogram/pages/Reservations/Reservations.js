@@ -84,7 +84,7 @@ Page({
                 title: '提示',
                 content: '预约失败，请重试！',
                 success(res2) {
-                  if (res.confirm) {
+                  if (res2.confirm) {
                     wx.navigateBack()
                   } else if (res2.cancel) {
                     wx.navigateBack()
@@ -96,5 +96,10 @@ Page({
         })
       }
     }
+  },
+  button() {
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
   }
 })
