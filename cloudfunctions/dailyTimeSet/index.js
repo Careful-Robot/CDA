@@ -15,6 +15,22 @@ exports.main = async (event, context) => {
   } else {
     var today = (date.getTime() - (date.getHours() + 8) * 3600000 - date.getMinutes() * 60000 - date.getSeconds() * 1000).toString().slice(0, -3)
   }
+  // 删除过期预约数据
+  await db.collection('User').get().then(res => {
+    res.data.forEach(function (item, index) {
+      if (parseInt(item.reservations.timestamp) < parseInt(today)) {
+        db.collection('User').doc(item._id).update({
+          data: {
+            'reservations.hospital_id': '',
+            'reservations.doctor_id': '',
+            'reservations.timestamp': '',
+            'reservations.time': '',
+            isReservations: false
+          }
+        })
+      }
+    })
+  })
   await db.collection('Doctor')
     .where({
       'reservations.time': today
