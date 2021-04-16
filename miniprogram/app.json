@@ -6,10 +6,7 @@
     "pages/Hospital/Hospital",
     "pages/Department_Choose/Department_Choose",
     "pages/Doctor_Choose/Doctor_Choose",
-    "pages/Reservations/Reservations",
-    "pages/Online_Consult/Online_Consult",
-    "pages/QR_Code/QR_Code",
-    "pages/Diagnosis_Record/Diagnosis_Record"
+    "pages/Reservations/Reservations"
   ],
   "window": {
     "navigationBarBackgroundColor": "#02B04F",
