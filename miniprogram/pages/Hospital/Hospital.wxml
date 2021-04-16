@@ -21,10 +21,11 @@
       <image class="image" src="/images/reservation.png" mode="widthFix"></image>
       <view class="title">预约挂号</view>
     </navigator>
-    <navigator class="navigator" url="/pages/Online_Consult/Online_Consult?id={{hospital._id}}">
-      <image class="image" src="/images/online_consult.png" mode="widthFix"></image>
+    <button class="button" open-type="contact" send-message-title="{{hospital.name}}"
+      send-message-path="/pages/Hospital/Hospital?id={{hospital._id}}" show-message-card>
+      <image class="image" src="/images/customer_service.png" mode="widthFix"></image>
       <view class="title">在线咨询</view>
-    </navigator>
+    </button>
   </view>
   <view class="hospital_information">
     <view class="hospital_information_block">
