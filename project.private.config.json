@@ -21,19 +21,19 @@
         {
           "name": "Hospital",
           "pathName": "pages/Hospital/Hospital",
-          "query": "id=79550af2606a86730d65d0b30e9d8575",
+          "query": "id=79550af26078504b0e96303e4e69f2d3",
           "scene": null
         },
         {
           "name": "Department_Choose",
           "pathName": "pages/Department_Choose/Department_Choose",
-          "query": "id=79550af2606a86730d65d0b30e9d8575",
+          "query": "id=79550af26078504b0e96303e4e69f2d3",
           "scene": null
         },
         {
           "name": "Doctor_Choose",
           "pathName": "pages/Doctor_Choose/Doctor_Choose",
-          "query": "id=79550af2606a86730d65d0b30e9d8575&department=内科",
+          "query": "id=79550af26078504b0e96303e4e69f2d3&department=门诊部",
           "scene": null
         },
         {
