@@ -60,7 +60,9 @@ page {
 }
 
 .doctor_hospital .department {
+  width: 120rpx;
   margin-left: 22rpx;
+  text-align: center;
 }
 
 .doctor_description {
