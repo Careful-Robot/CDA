@@ -3,3 +3,8 @@
   justify-content: center;
   margin: 20rpx 0rpx;
 }
+
+.header .banner {
+  width: 750rpx;
+  height: 350rpx;
+}
