@@ -130,6 +130,13 @@ page {
   margin-bottom: 25rpx;
 }
 
+.contact_bottom .contact_bottom_right .website {
+  width: 376rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 .contact_bottom .contact_bottom_left view {
   margin-right: 55rpx;
 }

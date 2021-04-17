@@ -41,7 +41,7 @@
           <view class="view">{{hospital.emergencyRoom_phone}}</view>
           <view class="view">{{hospital.informationDesk_phone}}</view>
           <view class="view">{{hospital.fax}}</view>
-          <view>{{hospital.website}}</view>
+          <view class="website">{{hospital.website}}</view>
         </view>
       </view>
     </view>
