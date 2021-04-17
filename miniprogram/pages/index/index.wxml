@@ -1,6 +1,4 @@
-<view class="header">
-  <image class="banner" src="/images/banner.jpg" mode="widthFix"></image>
-</view>
+<image class="banner" src="/images/banner.jpg" mode="widthFix"></image>
 <view class="container">
   <navigator url="/pages/Hospital_Choose/Hospital_Choose">
     <button type="primary">就诊</button>
