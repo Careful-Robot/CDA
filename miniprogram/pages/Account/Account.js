@@ -12,41 +12,54 @@ Page({
       })
     } else {
       app.checkLoginReadyCallback = res => {
-        this.setData({
-          userInfo: app.globalData.userInfo,
-          hasUserInfo: app.globalData.hasUserInfo
-        })
-        if (this.data.userInfo.isReservations) {
-          let temp = new Date(parseInt(this.data.userInfo.reservations.timestamp) * 1000)
-          let date = {
-            year: temp.getFullYear(),
-            month: temp.getMonth() + 1,
-            day: temp.getDate()
-          }
-          wx.cloud.callFunction({
-            name: 'getHospitalDataById',
-            data: {
-              id: this.data.userInfo.reservations.hospital_id
-            }
-          }).then(res1 => {
-            wx.cloud.callFunction({
-              name: 'getDoctorDataById',
-              data: {
-                id: this.data.userInfo.reservations.doctor_id
-              }
-            }).then(res2 => {
-              this.setData({
-                reservations: {
-                  hospital_name: res1.result.data.name,
-                  doctor_name: res2.result.data.name,
-                  date: date,
-                  time: this.data.userInfo.reservations.time
-                }
-              })
-            })
-          })
-        }
+        this.reservations()
       }
+    }
+  },
+  onShow() {
+    this.reservations()
+  },
+  reservations() {
+    wx.showLoading({
+      title: '正在加载中...',
+      mask: true
+    })
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      hasUserInfo: app.globalData.hasUserInfo
+    })
+    if (this.data.userInfo.isReservations) {
+      let temp = new Date(parseInt(this.data.userInfo.reservations.timestamp) * 1000)
+      let date = {
+        year: temp.getFullYear(),
+        month: temp.getMonth() + 1,
+        day: temp.getDate()
+      }
+      wx.cloud.callFunction({
+        name: 'getHospitalDataById',
+        data: {
+          id: this.data.userInfo.reservations.hospital_id
+        }
+      }).then(res1 => {
+        wx.cloud.callFunction({
+          name: 'getDoctorDataById',
+          data: {
+            id: this.data.userInfo.reservations.doctor_id
+          }
+        }).then(res2 => {
+          this.setData({
+            reservations: {
+              hospital_name: res1.result.data.name,
+              doctor_name: res2.result.data.name,
+              date: date,
+              time: this.data.userInfo.reservations.time
+            }
+          })
+          wx.hideLoading()
+        })
+      })
+    } else {
+      wx.hideLoading()
     }
   },
   getUserProfile() {
