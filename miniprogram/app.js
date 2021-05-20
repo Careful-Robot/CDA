@@ -5,7 +5,7 @@ App({
   },
   onLaunch() {
     wx.cloud.init({
-      env: 'carefulrobot-9gdwsth4e675d6ac',
+      env: 'carefulrobot-6gq11fqqd8e16755',
       traceUser: true
     })
     wx.cloud.callFunction({

@@ -2,7 +2,7 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-  env: 'carefulrobot-9gdwsth4e675d6ac'
+  env: 'carefulrobot-6gq11fqqd8e16755'
 })
 const db = cloud.database()
 const _ = db.command
