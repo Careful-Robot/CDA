@@ -24,7 +24,7 @@
 
 ### 2.2.2 部署云函数
 
-将云函数全部部署到云环境中
+将云函数全部[部署](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/functions/getting-started.html)到云环境中
 
 ![云函数](docs/3.png)
 
