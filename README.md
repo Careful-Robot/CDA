@@ -26,6 +26,8 @@
 
 将云函数全部[部署](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/guide/functions/getting-started.html)到云环境中
 
+**当云数据库部署完毕后，需要手动在云端跑一次`dailyTimeSet`方法以更新预约数据，点击下图右边的`云端测试`即可**
+
 ![云函数](docs/3.png)
 
 ### 2.2.3 部署存储
